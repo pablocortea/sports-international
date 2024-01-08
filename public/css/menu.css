@@ -1,0 +1,261 @@
+header {
+    position: fixed;
+    z-index: 100;
+    height: 65px;
+    width: 100%;
+    background-color: black;
+}
+
+/* Fondo móvil de colores */
+.headerBack {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(15px);
+    background: linear-gradient(to left, black, darkblue, black, blue, black);
+    background-size: 300% 300%;
+    animation: movingBackground 15s linear infinite;
+}
+
+@keyframes movingBackground {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 300% 0%;
+    }
+}
+
+/* Caja colocada sobre 'headerBack', que tiene los contenidos de la cabecera */
+.headerFront {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Caja 1: logo */
+.logo img {
+    max-width: 200px;
+}
+
+/* Caja 2: menu, contiene todos los botones */
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 25px;
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    & a {
+        font-size: 14px;
+        letter-spacing: 2px;
+        font-weight: 100;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+/* Botón Live */
+.live-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    background-color: red;
+    border: 1px red solid;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin-right: 60px;
+    opacity: 0.99;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background: linear-gradient(45deg, red, red, white, red, red, red, red, red, red, red, red);
+        background-size: 1000%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 30s linear infinite;
+        opacity: 1;
+        transition: opacity 2s ease-in;
+        border-radius: 3px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+        background-color: white;
+        border: 1px red solid;
+
+        & a {
+            color: black;
+        }
+    }
+
+    &:active {
+        background-color: indianred;
+        opacity: 1;
+
+        & a {
+            color: black;
+        }
+    }
+}
+
+@keyframes glowing {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 400% 0;
+    }
+}
+
+/* Botones Deportes */
+.sports-buttons {
+    position: absolute;
+    margin-left: 12em;
+    display: flex;
+    text-align: center;
+    gap: 10px;
+}
+.sport-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    width: 140px;
+    height: 40px;
+    background-color: black;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin-right: 3px;
+    text-decoration: none;
+    color: white;
+
+    &::before {
+        content: "";
+        transition: 0.2s all ease-out;
+        position: absolute; /* Toma la posición absoluta a partir de cada elemento relativo para hacer la animación */
+        z-index: -1;
+        top: 0;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        opacity: 0;
+        background-color: #c3c3c3;
+        color: black;
+    }
+
+    & a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: black;
+
+        &::before {
+            left: 0;
+            right: 0;
+            opacity: 1;
+        }
+    }
+
+    &:active {
+        opacity: 0.75;
+    }
+}
+
+.basketball {
+    border: 1px solid #2196f3;
+}
+
+.baseball {
+    border: 1px solid #a17901;
+}
+
+.soccer {
+    border: 1px solid #4caf50;
+}
+
+.rugby {
+    border: 1px solid #f44336;
+}
+
+.tennis {
+    border: 1px solid #9c27b0;
+}
+
+.motor {
+    border: 1px solid #795548;
+}
+
+/* Botón Login */
+.login-button {
+    position: absolute;
+    right: 30px;
+
+    & img {
+        width: 30px;
+        height: 30px;
+        filter: invert(1); /* Pasa la imagen a su negativo */
+        margin-right: 10px;
+    }
+
+    & a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+            background-color: blue;
+            border: 15px blue solid;
+            margin-right: -15px;
+        }
+
+        & span {
+            text-transform: uppercase;
+            line-height: 30px; /* Ajusta la altura del botón para centrar verticalmente */
+        }
+    }
+}
+
+/* Últimas noticias */
+.breaking_scroll {
+    position: absolute;
+    border: 0;
+    top: 65px;
+    height: 30px;
+    width: 100%;
+    background-color: red;
+    overflow: hidden;
+    border-bottom: 3px black solid;
+
+    & iframe {
+        border: none;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,117 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.login-box {
+    font-family: "Zilla Slab", serif;
+    font-size: 1.2em;
+    margin: 80px;
+    padding: 40px 60px 120px 60px;
+    width: 300px;
+    background-color: azure;
+    border: 1px darkblue solid;
+    border-bottom: 10px darkblue solid;
+    border-radius: 10px;
+
+    & h2 {
+        font-size: 1.3em;
+        letter-spacing: 1px;
+    }
+
+    & h3 {
+        margin-top: 50px;
+        border-bottom: 1px black dotted;
+        letter-spacing: 1px;
+    }
+
+    & a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            color: grey;
+        }
+    }
+}
+
+
+.field {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Manrope", sans-serif;
+    font-size: 0.8em;
+    width: 100%;
+    margin-bottom: 10px;
+
+    & span {
+        color: red;
+    }
+}
+
+.login-send {
+    font-family: "Manrope", sans-serif;
+    border: 1px darkblue solid;
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    right: 0;
+    cursor: pointer;
+}
+
+.login-send:hover {
+    background-color: lightblue;
+    color: black;
+    cursor: pointer;
+}
+
+/* Página de contacto */
+.contact-page {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact-map {
+    width: 800px;
+    height: 600px;
+    margin-left: 200px;
+    margin-top: 80px;
+}
+
+.contact-box {
+    font-family: "Zilla Slab", serif;
+    font-size: 1.2em;
+    margin: 80px 200px 0 80px;
+    padding: 80px;
+    width: 300px;
+    height: 450px;
+    background-color: azure;
+    border: 1px darkblue solid;
+    border-bottom: 10px darkblue solid;
+    border-radius: 10px;
+
+    & h2 {
+        font-size: 1.3em;
+        letter-spacing: 1px;
+    }
+
+    & h3 {
+        margin-top: 50px;
+        border-bottom: 1px black dotted;
+        letter-spacing: 1px;
+    }
+
+    & a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            color: grey;
+        }
+    }
+}

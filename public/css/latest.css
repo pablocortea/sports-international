@@ -1,0 +1,36 @@
+/* Últimas noticias */
+.latest {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 30px;
+    background-color: red;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: "Roboto", sans-serif;
+    border: none;
+}
+
+.block {
+    display: inline-block;
+    margin-right: 10px; /* Espacio entre párrafos */
+    animation: scrollText 60s linear infinite;
+    color: white;
+
+    & p {
+        margin: 0;
+    }
+
+    & span {
+        color: yellow;
+    }
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-30%);
+    }
+}
